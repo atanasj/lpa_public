@@ -1,0 +1,28 @@
+# NOTE pdf output
+# bookdown::pdf_document2:
+#   latex_engine: lualatex
+#   toc: false
+#   pandoc_args: --listings
+#   includes:
+#     in_header: "preamble.tex"
+    # - \usepackage{pdflscape}
+    # - \newcommand{\blandscape}{\begin{landscape}}
+    # - \newcommand{\elandscape}{\end{landscape}}
+# NOTE docx output
+bookdown::word_document2:
+  number_sections: false
+  fig_caption: yes
+  pandoc_args: [
+  "--metadata-file", "/Users/atanas/.pandoc/docxR.yml",
+  "--reference-doc", "/Users/atanas/.pandoc/templates/reference.docx"
+  ]
+# NOTE html output
+bookdown::html_document2:
+  number_sections: false
+  fig_caption: yes
+  toc: yes
+  toc_depth: 3
+  toc_float: true
+  keep_md: true
+  theme: paper
+  highlight: textmate
