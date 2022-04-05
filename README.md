@@ -1,6 +1,6 @@
 # Generalisability of the Interpersonal Theory of Suicide to Latent Profiles of Young People Attending Treatment in a Suicide Prevention Service
 
 
-This repo contained `R` and `Mplus` code used in the manuscript entitled: *"Generalisability of the Interpersonal Theory of Suicide to Latent Profiles of Young People Attending Treatment in a Suicide Prevention Service."*
+This repo contains `R` and `Mplus` code used in the manuscript entitled: *"Generalisability of the Interpersonal Theory of Suicide to Latent Profiles of Young People Attending Treatment in a Suicide Prevention Service."*
 
-Please note, due to privacy and ethic restrictions related to this study, no data is available to reproduce results. If you would like to learn how you can access this data, please contact me or raise an issues on this repo.
+Please note, due to privacy restrictions related to the [University of Wollongong](www.uow.edu.au) Human Research Ethics Committee (Ethics Number: HE14/376) approval for this study, no data is available to reproduce the results reported in the manuscript. If you would like to learn more about this limitation please contact me directly or raise an issue on this repo.
