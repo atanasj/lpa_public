@@ -10,8 +10,8 @@ Please note, due to privacy restrictions related to the [University of Wollongon
 
 -  [x] Add manuscript `.Rmd` file.
 -  [x] Add `func.R` script.
--  [ ] Add `load.R` script.
+-  [x] Add `load.R` script.
 -  [x] Add `data` dir and subdirs.
--  [ ] Add scripts related to data cleansing and analyses.
--  [ ] Add `Mplus` output files.
+-  [x] Add scripts related to data cleansing and analyses.
+-  [x] Add `Mplus` output files.
 -  [x] Add figure `.png` file.

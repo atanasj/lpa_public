@@ -1,0 +1,31 @@
+TITLE:
+Class 7 1_optseed_m_v2
+DATA:
+FILE = "/Users/atanas/git/PR_quant_LPA/mplus/1_optseed_m/full_1_optseed_m.dat";
+ 
+VARIABLE:
+NAMES = ID pb tb bhs ac; 
+ MISSING=.;
+ USEVARIABLES = pb tb bhs ac;
+IDVARIABLE = ID;
+CLASSES = c(7);
+ANALYSIS:
+ESTIMATOR = MLR;
+           ALGORITHM = INTEGRATION;
+           TYPE = MIXTURE;
+           STARTS = 80 16;
+           ! OPTSEED = 391179;
+           ! Dual-Core with hyperthreading = 4 processors
+           PROCESSORS = 4;
+           ! K-1STARTS = 20 4; ! used with TECH11 output
+           ! LRTSTARTS = 20 4 40 8; ! used with TECH14 output
+OUTPUT:
+TECH1 TECH8;
+           ! TECH11 TECH14;
+          STANDARDIZED; ! this saves standardised scores for plotting
+SAVEDATA:
+FILE = /Users/atanas/git/PR_quant_LPA/mplus/1_optseed_m/c7_1_optseed_m_v2.dat;
+SAVE = CPROB;
+            FORMAT = FREE;
+PLOT:
+TYPE = PLOT3;

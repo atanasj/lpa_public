@@ -1,0 +1,1058 @@
+Mplus VERSION 8.6 (Mac)
+MUTHEN & MUTHEN
+01/25/2022   1:06 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+  Class 4 1_optseed_m_v2
+  DATA:
+  FILE = "/Users/atanas/git/PR_quant_LPA/mplus/1_optseed_m/full_1_optseed_m.dat";
+
+  VARIABLE:
+  NAMES = ID pb tb bhs ac;
+   MISSING=.;
+   USEVARIABLES = pb tb bhs ac;
+  IDVARIABLE = ID;
+  CLASSES = c(4);
+  ANALYSIS:
+  ESTIMATOR = MLR;
+             ALGORITHM = INTEGRATION;
+             TYPE = MIXTURE;
+             STARTS = 40 8;
+             ! OPTSEED = 391179;
+             ! Dual-Core with hyperthreading = 4 processors
+             PROCESSORS = 4;
+             ! K-1STARTS = 20 4; ! used with TECH11 output
+             ! LRTSTARTS = 20 4 40 8; ! used with TECH14 output
+  OUTPUT:
+  TECH1 TECH8;
+             ! TECH11 TECH14;
+            STANDARDIZED; ! this saves standardised scores for plotting
+  SAVEDATA:
+  FILE = /Users/atanas/git/PR_quant_LPA/mplus/1_optseed_m/c4_1_optseed_m_v2.dat;
+  SAVE = CPROB;
+              FORMAT = FREE;
+  PLOT:
+  TYPE = PLOT3;
+
+
+
+*** WARNING in MODEL command
+  All variables are uncorrelated with all other variables within class.
+  Check that this is what is intended.
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  5
+   2 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+Class 4 1_optseed_m_v2
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         747
+
+Number of dependent variables                                    4
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+Number of categorical latent variables                           1
+
+Observed dependent variables
+
+  Continuous
+   PB          TB          BHS         AC
+
+Categorical latent variables
+   C
+
+Variables with special functions
+
+  ID variable           ID
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                 100
+  Convergence criterion                                  0.100D-05
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-02
+    Relative loglikelihood change                        0.100D-05
+    Derivative                                           0.100D-02
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-02
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-02
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            15
+  Minimum value for logit thresholds                           -15
+  Minimum expected cell size for chi-square              0.100D-01
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization algorithm                                         EMA
+Integration Specifications
+  Type                                                    STANDARD
+  Number of integration points                                  15
+  Dimensions of numerical integration                            0
+  Adaptive quadrature                                           ON
+Random Starts Specifications
+  Number of initial stage random starts                         40
+  Number of final stage optimizations                            8
+  Number of initial stage iterations                            10
+  Initial stage convergence criterion                    0.100D+01
+  Random starts scale                                    0.500D+01
+  Random seed for generating random starts                       0
+Cholesky                                                       OFF
+
+Input data file(s)
+  /Users/atanas/git/PR_quant_LPA/mplus/1_optseed_m/full_1_optseed_m.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             9
+     Number of y missing data patterns           9
+     Number of u missing data patterns           0
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR Y
+
+
+           Covariance Coverage
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+ PB             0.969
+ TB             0.964         0.964
+ BHS            0.929         0.925         0.959
+ AC             0.902         0.898         0.878         0.905
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     PB                   25.541      -0.240       6.000    1.66%      16.000     24.000     26.000
+             724.000      85.260      -0.796      42.000    2.90%      29.000     34.000
+     TB                   39.288      -0.399       9.000    0.14%      32.000     38.000     40.000
+             720.000      85.539       0.181      61.000    0.28%      42.000     47.000
+     BHS                  12.756      -0.338       0.000    0.42%       9.000     11.000     13.000
+             716.000      22.271      -0.632      20.000    6.84%      14.120     17.000
+     AC                   17.146      -0.380       0.000    0.74%      12.000     16.000     17.000
+             676.000      43.051      -0.382      28.000    5.47%      19.000     23.000
+
+RANDOM STARTS RESULTS RANKED FROM THE BEST TO THE WORST LOGLIKELIHOOD VALUES
+
+Final stage loglikelihood values at local maxima, seeds, and initial stage start numbers:
+
+           -9297.923  399671           13
+           -9297.924  902278           21
+           -9297.925  462953           7
+           -9297.926  285380           1
+           -9297.928  830392           35
+           -9309.150  569131           26
+           -9309.155  153942           31
+           -9309.158  650371           14
+
+
+
+THE BEST LOGLIKELIHOOD VALUE HAS BEEN REPLICATED.  RERUN WITH AT LEAST TWICE THE
+RANDOM STARTS TO CHECK THAT THE BEST LOGLIKELIHOOD IS STILL OBTAINED AND REPLICATED.
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       23
+
+Loglikelihood
+
+          H0 Value                       -9297.923
+          H0 Scaling Correction Factor      1.1047
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   18641.846
+          Bayesian (BIC)                 18748.015
+          Sample-Size Adjusted BIC       18674.982
+            (n* = (n + 2) / 24)
+
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THE ESTIMATED MODEL
+
+    Latent
+   Classes
+
+       1        169.67777          0.22715
+       2        105.60561          0.14137
+       3        306.07860          0.40974
+       4        165.63802          0.22174
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON ESTIMATED POSTERIOR PROBABILITIES
+
+    Latent
+   Classes
+
+       1        169.67774          0.22715
+       2        105.60562          0.14137
+       3        306.07861          0.40974
+       4        165.63803          0.22174
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THEIR MOST LIKELY LATENT CLASS MEMBERSHIP
+
+Class Counts and Proportions
+
+    Latent
+   Classes
+
+       1              163          0.21821
+       2              103          0.13788
+       3              319          0.42704
+       4              162          0.21687
+
+
+CLASSIFICATION QUALITY
+
+     Entropy                         0.678
+
+
+Average Latent Class Probabilities for Most Likely Latent Class Membership (Row)
+by Latent Class (Column)
+
+           1        2        3        4
+
+    1   0.735    0.066    0.063    0.136
+    2   0.077    0.894    0.000    0.029
+    3   0.051    0.000    0.877    0.072
+    4   0.159    0.017    0.098    0.726
+
+
+Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+           1        2        3        4
+
+    1   0.706    0.046    0.095    0.152
+    2   0.101    0.872    0.000    0.026
+    3   0.034    0.000    0.914    0.052
+    4   0.134    0.018    0.138    0.710
+
+
+Logits for the Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+              1        2        3        4
+
+    1      1.536   -1.185   -0.465    0.000
+    2      1.367    3.518   -4.148    0.000
+    3     -0.433   -8.866    2.869    0.000
+    4     -1.668   -3.670   -1.637    0.000
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ Means
+    PB                18.722      1.197     15.636      0.000
+    TB                36.852      1.089     33.828      0.000
+    BHS               12.094      0.773     15.647      0.000
+    AC                16.251      0.892     18.228      0.000
+
+ Variances
+    PB                35.702      3.711      9.622      0.000
+    TB                53.573      2.939     18.226      0.000
+    BHS                6.558      0.797      8.231      0.000
+    AC                37.634      2.006     18.760      0.000
+
+Latent Class 2
+
+ Means
+    PB                13.278      0.622     21.337      0.000
+    TB                27.618      1.222     22.601      0.000
+    BHS                5.667      0.535     10.591      0.000
+    AC                12.324      0.804     15.335      0.000
+
+ Variances
+    PB                35.702      3.711      9.622      0.000
+    TB                53.573      2.939     18.226      0.000
+    BHS                6.558      0.797      8.231      0.000
+    AC                37.634      2.006     18.760      0.000
+
+Latent Class 3
+
+ Means
+    PB                31.523      0.709     44.432      0.000
+    TB                44.570      0.535     83.366      0.000
+    BHS               16.932      0.217     78.201      0.000
+    AC                19.407      0.425     45.697      0.000
+
+ Variances
+    PB                35.702      3.711      9.622      0.000
+    TB                53.573      2.939     18.226      0.000
+    BHS                6.558      0.797      8.231      0.000
+    AC                37.634      2.006     18.760      0.000
+
+Latent Class 4
+
+ Means
+    PB                29.305      1.254     23.376      0.000
+    TB                39.483      0.716     55.161      0.000
+    BHS               10.345      0.394     26.271      0.000
+    AC                16.828      0.864     19.466      0.000
+
+ Variances
+    PB                35.702      3.711      9.622      0.000
+    TB                53.573      2.939     18.226      0.000
+    BHS                6.558      0.797      8.231      0.000
+    AC                37.634      2.006     18.760      0.000
+
+Categorical Latent Variables
+
+ Means
+    C#1                0.024      0.415      0.058      0.954
+    C#2               -0.450      0.259     -1.739      0.082
+    C#3                0.614      0.258      2.376      0.018
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.192E-02
+       (ratio of smallest to largest eigenvalue)
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ Means
+    PB                 3.133      0.271     11.564      0.000
+    TB                 5.035      0.227     22.188      0.000
+    BHS                4.723      0.302     15.650      0.000
+    AC                 2.649      0.166     15.950      0.000
+
+ Variances
+    PB                 1.000      0.000    999.000    999.000
+    TB                 1.000      0.000    999.000    999.000
+    BHS                1.000      0.000    999.000    999.000
+    AC                 1.000      0.000    999.000    999.000
+
+Latent Class 2
+
+ Means
+    PB                 2.222      0.131     16.938      0.000
+    TB                 3.773      0.188     20.031      0.000
+    BHS                2.213      0.186     11.882      0.000
+    AC                 2.009      0.136     14.757      0.000
+
+ Variances
+    PB                 1.000      0.000    999.000    999.000
+    TB                 1.000      0.000    999.000    999.000
+    BHS                1.000      0.000    999.000    999.000
+    AC                 1.000      0.000    999.000    999.000
+
+Latent Class 3
+
+ Means
+    PB                 5.276      0.370     14.265      0.000
+    TB                 6.089      0.193     31.585      0.000
+    BHS                6.612      0.452     14.617      0.000
+    AC                 3.164      0.125     25.217      0.000
+
+ Variances
+    PB                 1.000      0.000    999.000    999.000
+    TB                 1.000      0.000    999.000    999.000
+    BHS                1.000      0.000    999.000    999.000
+    AC                 1.000      0.000    999.000    999.000
+
+Latent Class 4
+
+ Means
+    PB                 4.905      0.326     15.060      0.000
+    TB                 5.394      0.165     32.641      0.000
+    BHS                4.040      0.303     13.350      0.000
+    AC                 2.743      0.160     17.115      0.000
+
+ Variances
+    PB                 1.000      0.000    999.000    999.000
+    TB                 1.000      0.000    999.000    999.000
+    BHS                1.000      0.000    999.000    999.000
+    AC                 1.000      0.000    999.000    999.000
+
+
+STDY Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ Means
+    PB                 3.133      0.271     11.564      0.000
+    TB                 5.035      0.227     22.188      0.000
+    BHS                4.723      0.302     15.650      0.000
+    AC                 2.649      0.166     15.950      0.000
+
+ Variances
+    PB                 1.000      0.000    999.000    999.000
+    TB                 1.000      0.000    999.000    999.000
+    BHS                1.000      0.000    999.000    999.000
+    AC                 1.000      0.000    999.000    999.000
+
+Latent Class 2
+
+ Means
+    PB                 2.222      0.131     16.938      0.000
+    TB                 3.773      0.188     20.031      0.000
+    BHS                2.213      0.186     11.882      0.000
+    AC                 2.009      0.136     14.757      0.000
+
+ Variances
+    PB                 1.000      0.000    999.000    999.000
+    TB                 1.000      0.000    999.000    999.000
+    BHS                1.000      0.000    999.000    999.000
+    AC                 1.000      0.000    999.000    999.000
+
+Latent Class 3
+
+ Means
+    PB                 5.276      0.370     14.265      0.000
+    TB                 6.089      0.193     31.585      0.000
+    BHS                6.612      0.452     14.617      0.000
+    AC                 3.164      0.125     25.217      0.000
+
+ Variances
+    PB                 1.000      0.000    999.000    999.000
+    TB                 1.000      0.000    999.000    999.000
+    BHS                1.000      0.000    999.000    999.000
+    AC                 1.000      0.000    999.000    999.000
+
+Latent Class 4
+
+ Means
+    PB                 4.905      0.326     15.060      0.000
+    TB                 5.394      0.165     32.641      0.000
+    BHS                4.040      0.303     13.350      0.000
+    AC                 2.743      0.160     17.115      0.000
+
+ Variances
+    PB                 1.000      0.000    999.000    999.000
+    TB                 1.000      0.000    999.000    999.000
+    BHS                1.000      0.000    999.000    999.000
+    AC                 1.000      0.000    999.000    999.000
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ Means
+    PB                18.722      1.197     15.636      0.000
+    TB                36.852      1.089     33.828      0.000
+    BHS               12.094      0.773     15.647      0.000
+    AC                16.251      0.892     18.228      0.000
+
+ Variances
+    PB                35.702      3.711      9.622      0.000
+    TB                53.573      2.939     18.226      0.000
+    BHS                6.558      0.797      8.231      0.000
+    AC                37.634      2.006     18.760      0.000
+
+Latent Class 2
+
+ Means
+    PB                13.278      0.622     21.337      0.000
+    TB                27.618      1.222     22.601      0.000
+    BHS                5.667      0.535     10.591      0.000
+    AC                12.324      0.804     15.335      0.000
+
+ Variances
+    PB                35.702      3.711      9.622      0.000
+    TB                53.573      2.939     18.226      0.000
+    BHS                6.558      0.797      8.231      0.000
+    AC                37.634      2.006     18.760      0.000
+
+Latent Class 3
+
+ Means
+    PB                31.523      0.709     44.432      0.000
+    TB                44.570      0.535     83.366      0.000
+    BHS               16.932      0.217     78.201      0.000
+    AC                19.407      0.425     45.697      0.000
+
+ Variances
+    PB                35.702      3.711      9.622      0.000
+    TB                53.573      2.939     18.226      0.000
+    BHS                6.558      0.797      8.231      0.000
+    AC                37.634      2.006     18.760      0.000
+
+Latent Class 4
+
+ Means
+    PB                29.305      1.254     23.376      0.000
+    TB                39.483      0.716     55.161      0.000
+    BHS               10.345      0.394     26.271      0.000
+    AC                16.828      0.864     19.466      0.000
+
+ Variances
+    PB                35.702      3.711      9.622      0.000
+    TB                53.573      2.939     18.226      0.000
+    BHS                6.558      0.797      8.231      0.000
+    AC                37.634      2.006     18.760      0.000
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 1
+
+
+           NU
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+                    1             2             3             4
+
+
+           THETA
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+ PB                 5
+ TB                 0             6
+ BHS                0             0             7
+ AC                 0             0             0             8
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 2
+
+
+           NU
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+                    9            10            11            12
+
+
+           THETA
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+ PB                 5
+ TB                 0             6
+ BHS                0             0             7
+ AC                 0             0             0             8
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 3
+
+
+           NU
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+                   13            14            15            16
+
+
+           THETA
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+ PB                 5
+ TB                 0             6
+ BHS                0             0             7
+ AC                 0             0             0             8
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 4
+
+
+           NU
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+                   17            18            19            20
+
+
+           THETA
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+ PB                 5
+ TB                 0             6
+ BHS                0             0             7
+ AC                 0             0             0             8
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2           C#3           C#4
+              ________      ________      ________      ________
+                   21            22            23             0
+
+
+     STARTING VALUES FOR LATENT CLASS 1
+
+
+           NU
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+               16.307        30.039         8.037        10.585
+
+
+           THETA
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+ PB            42.630
+ TB             0.000        42.769
+ BHS            0.000         0.000        11.136
+ AC             0.000         0.000         0.000        21.526
+
+
+     STARTING VALUES FOR LATENT CLASS 2
+
+
+           NU
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+               25.541        39.288        12.756        17.146
+
+
+           THETA
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+ PB            42.630
+ TB             0.000        42.769
+ BHS            0.000         0.000        11.136
+ AC             0.000         0.000         0.000        21.526
+
+
+     STARTING VALUES FOR LATENT CLASS 3
+
+
+           NU
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+               25.541        39.288        12.756        17.146
+
+
+           THETA
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+ PB            42.630
+ TB             0.000        42.769
+ BHS            0.000         0.000        11.136
+ AC             0.000         0.000         0.000        21.526
+
+
+     STARTING VALUES FOR LATENT CLASS 4
+
+
+           NU
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+               34.775        48.536        17.476        23.708
+
+
+           THETA
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+ PB            42.630
+ TB             0.000        42.769
+ BHS            0.000         0.000        11.136
+ AC             0.000         0.000         0.000        21.526
+
+
+     STARTING VALUES FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2           C#3           C#4
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+TECHNICAL 8 OUTPUT
+
+
+  INITIAL STAGE ITERATIONS
+
+
+  TECHNICAL 8 OUTPUT FOR UNPERTURBED STARTING VALUE SET
+
+
+   E STEP  ITER  LOGLIKELIHOOD    ABS CHANGE   REL CHANGE  ALGORITHM
+              1 -0.94235381D+04    0.0000000    0.0000000  EM
+              2 -0.93424821D+04   81.0559918    0.0086014  EM
+              3 -0.93323197D+04   10.1624183    0.0010878  EM
+              4 -0.93300205D+04    2.2992044    0.0002464  EM
+              5 -0.93290461D+04    0.9743933    0.0001044  EM
+
+
+  TECHNICAL 8 OUTPUT FOR STARTING VALUE SET 1
+
+
+   E STEP  ITER  LOGLIKELIHOOD    ABS CHANGE   REL CHANGE  ALGORITHM
+              1 -0.13384688D+05    0.0000000    0.0000000  EM
+              2 -0.94418690D+04 3942.8186554    0.2945768  EM
+              3 -0.93717400D+04   70.1289903    0.0074274  EM
+              4 -0.93474070D+04   24.3330260    0.0025964  EM
+              5 -0.93375919D+04    9.8150961    0.0010500  EM
+              6 -0.93323400D+04    5.2518590    0.0005624  EM
+              7 -0.93287165D+04    3.6235694    0.0003883  EM
+              8 -0.93258291D+04    2.8873471    0.0003095  EM
+              9 -0.93233633D+04    2.4658033    0.0002644  EM
+             10 -0.93211807D+04    2.1825823    0.0002341  EM
+
+
+  TECHNICAL 8 OUTPUT FOR STARTING VALUE SET 2
+
+
+   E STEP  ITER  LOGLIKELIHOOD    ABS CHANGE   REL CHANGE  ALGORITHM
+              1 -0.11214396D+05    0.0000000    0.0000000  EM
+              2 -0.94140897D+04 1800.3061743    0.1605353  EM
+              3 -0.93881088D+04   25.9808816    0.0027598  EM
+              4 -0.93793431D+04    8.7656577    0.0009337  EM
+              5 -0.93742177D+04    5.1254647    0.0005465  EM
+              6 -0.93706483D+04    3.5693412    0.0003808  EM
+              7 -0.93679989D+04    2.6493615    0.0002827  EM
+              8 -0.93659903D+04    2.0086372    0.0002144  EM
+              9 -0.93644522D+04    1.5381049    0.0001642  EM
+             10 -0.93632478D+04    1.2044113    0.0001286  EM
+
+
+  TECHNICAL 8 OUTPUT FOR STARTING VALUE SET 3
+
+
+   E STEP  ITER  LOGLIKELIHOOD    ABS CHANGE   REL CHANGE  ALGORITHM
+              1 -0.13074303D+05    0.0000000    0.0000000  EM
+              2 -0.94286143D+04 3645.6885277    0.2788438  EM
+              3 -0.93831008D+04   45.5134843    0.0048272  EM
+              4 -0.93640734D+04   19.0274544    0.0020278  EM
+              5 -0.93524306D+04   11.6427388    0.0012433  EM
+              6 -0.93452044D+04    7.2262754    0.0007727  EM
+              7 -0.93402586D+04    4.9457493    0.0005292  EM
+              8 -0.93363762D+04    3.8824391    0.0004157  EM
+              9 -0.93330574D+04    3.3187616    0.0003555  EM
+             10 -0.93301208D+04    2.9366260    0.0003146  EM
+
+
+  TECHNICAL 8 OUTPUT FOR STARTING VALUE SET 4
+
+
+   E STEP  ITER  LOGLIKELIHOOD    ABS CHANGE   REL CHANGE  ALGORITHM
+              1 -0.15514564D+05    0.0000000    0.0000000  EM
+              2 -0.96042803D+04 5910.2841453    0.3809507  EM
+              3 -0.95037527D+04  100.5275942    0.0104670  EM
+              4 -0.94304970D+04   73.2557411    0.0077081  EM
+              5 -0.93772225D+04   53.2744176    0.0056492  EM
+              6 -0.93457304D+04   31.4921036    0.0033584  EM
+              7 -0.93339972D+04   11.7332263    0.0012555  EM
+              8 -0.93301309D+04    3.8663039    0.0004142  EM
+              9 -0.93284381D+04    1.6928432    0.0001814  EM
+             10 -0.93274172D+04    1.0208279    0.0001094  EM
+
+
+  TECHNICAL 8 OUTPUT FOR STARTING VALUE SET 5
+
+
+   E STEP  ITER  LOGLIKELIHOOD    ABS CHANGE   REL CHANGE  ALGORITHM
+              1 -0.13053842D+05    0.0000000    0.0000000  EM
+              2 -0.96181932D+04 3435.6483179    0.2631906  EM
+              3 -0.95334968D+04   84.6964623    0.0088059  EM
+              4 -0.94266471D+04  106.8496333    0.0112078  EM
+              5 -0.93731880D+04   53.4591758    0.0056711  EM
+              6 -0.93511543D+04   22.0336127    0.0023507  EM
+              7 -0.93410020D+04   10.1523173    0.0010857  EM
+              8 -0.93356595D+04    5.3425463    0.0005719  EM
+              9 -0.93324925D+04    3.1669333    0.0003392  EM
+             10 -0.93304418D+04    2.0507435    0.0002197  EM
+
+
+  TECHNICAL 8 OUTPUT FOR STARTING VALUE SET 6
+
+
+   E STEP  ITER  LOGLIKELIHOOD    ABS CHANGE   REL CHANGE  ALGORITHM
+              1 -0.13510458D+05    0.0000000    0.0000000  EM
+              2 -0.94595524D+04 4050.9050973    0.2998348  EM
+              3 -0.94084214D+04   51.1310255    0.0054052  EM
+              4 -0.93790440D+04   29.3773765    0.0031225  EM
+              5 -0.93582387D+04   20.8053277    0.0022183  EM
+              6 -0.93461258D+04   12.1128446    0.0012944  EM
+              7 -0.93390710D+04    7.0548176    0.0007548  EM
+              8 -0.93342981D+04    4.7729646    0.0005111  EM
+              9 -0.93305061D+04    3.7919930    0.0004062  EM
+             10 -0.93272778D+04    3.2282135    0.0003460  EM
+
+
+  TECHNICAL 8 OUTPUT FOR STARTING VALUE SET 7
+
+
+   E STEP  ITER  LOGLIKELIHOOD    ABS CHANGE   REL CHANGE  ALGORITHM
+              1 -0.18802621D+05    0.0000000    0.0000000  EM
+              2 -0.95277685D+04 9274.8524313    0.4932744  EM
+              3 -0.93924620D+04  135.3065284    0.0142013  EM
+              4 -0.93530312D+04   39.4307868    0.0041981  EM
+              5 -0.93395845D+04   13.4466439    0.0014377  EM
+              6 -0.93330612D+04    6.5233328    0.0006985  EM
+              7 -0.93293962D+04    3.6649540    0.0003927  EM
+              8 -0.93271486D+04    2.2476039    0.0002409  EM
+              9 -0.93256678D+04    1.4808625    0.0001588  EM
+             10 -0.93246148D+04    1.0529954    0.0001129  EM
+
+
+  TECHNICAL 8 OUTPUT FOR STARTING VALUE SET 8
+
+
+   E STEP  ITER  LOGLIKELIHOOD    ABS CHANGE   REL CHANGE  ALGORITHM
+              1 -0.14085241D+05    0.0000000    0.0000000  EM
+              2 -0.94217783D+04 4663.4621878    0.3310886  EM
+              3 -0.93891720D+04   32.6063684    0.0034607  EM
+              4 -0.93778005D+04   11.3714994    0.0012111  EM
+              5 -0.93716377D+04    6.1628029    0.0006572  EM
+              6 -0.93674595D+04    4.1781119    0.0004458  EM
+              7 -0.93641586D+04    3.3009327    0.0003524  EM
+              8 -0.93612624D+04    2.8962527    0.0003093  EM
+              9 -0.93585306D+04    2.7317387    0.0002918  EM
+             10 -0.93558125D+04    2.7180924    0.0002904  EM
+
+
+  TECHNICAL 8 OUTPUT FOR STARTING VALUE SET 9
+
+
+   E STEP  ITER  LOGLIKELIHOOD    ABS CHANGE   REL CHANGE  ALGORITHM
+              1 -0.16521685D+05    0.0000000    0.0000000  EM
+              2 -0.94380808D+04 7083.6045283    0.4287459  EM
+              3 -0.93708699D+04   67.2108533    0.0071212  EM
+              4 -0.93474568D+04   23.4130644    0.0024985  EM
+              5 -0.93387969D+04    8.6599518    0.0009265  EM
+              6 -0.93354624D+04    3.3345116    0.0003571  EM
+              7 -0.93338495D+04    1.6128404    0.0001728  EM
+              8 -0.93327983D+04    1.0512391    0.0001126  EM
+              9 -0.93319576D+04    0.8406918    0.0000901  EM
+
+
+  TECHNICAL 8 OUTPUT FOR STARTING VALUE SET 10
+
+
+   E STEP  ITER  LOGLIKELIHOOD    ABS CHANGE   REL CHANGE  ALGORITHM
+              1 -0.13827532D+05    0.0000000    0.0000000  EM
+              2 -0.95211721D+04 4306.3602292    0.3114337  EM
+              3 -0.94766710D+04   44.5010745    0.0046739  EM
+              4 -0.94525557D+04   24.1153128    0.0025447  EM
+              5 -0.94335156D+04   19.0401391    0.0020143  EM
+              6 -0.94179424D+04   15.5731581    0.0016508  EM
+              7 -0.94055899D+04   12.3525665    0.0013116  EM
+              8 -0.93960700D+04    9.5198355    0.0010121  EM
+              9 -0.93887840D+04    7.2859876    0.0007754  EM
+             10 -0.93831343D+04    5.6497132    0.0006018  EM
+
+
+  FINAL STAGE ITERATIONS
+
+
+  TECHNICAL 8 OUTPUT FOR STARTING VALUE SET 1
+
+
+
+
+   E STEP  ITER  LOGLIKELIHOOD    ABS CHANGE   REL CHANGE  ALGORITHM
+              1 -0.13384688D+05    0.0000000    0.0000000  EM
+              2 -0.94418690D+04 3942.8186554    0.2945768  EM
+              3 -0.93717400D+04   70.1289903    0.0074274  EM
+              4 -0.93474070D+04   24.3330260    0.0025964  EM
+              5 -0.93375919D+04    9.8150961    0.0010500  EM
+              6 -0.93323400D+04    5.2518590    0.0005624  EM
+              7 -0.93287165D+04    3.6235694    0.0003883  EM
+              8 -0.93258291D+04    2.8873471    0.0003095  EM
+              9 -0.93233633D+04    2.4658033    0.0002644  EM
+             10 -0.93211807D+04    2.1825823    0.0002341  EM
+             11 -0.93192172D+04    1.9635151    0.0002107  EM
+             12 -0.93174604D+04    1.7568210    0.0001885  EM
+             13 -0.93159310D+04    1.5293923    0.0001641  EM
+             14 -0.93146483D+04    1.2827019    0.0001377  EM
+             15 -0.93136041D+04    1.0441873    0.0001121  EM
+             16 -0.93127637D+04    0.8404282    0.0000902  EM
+             17 -0.93120807D+04    0.6829881    0.0000733  EM
+             18 -0.93115090D+04    0.5717029    0.0000614  EM
+             19 -0.93110090D+04    0.5000371    0.0000537  EM
+             20 -0.93105487D+04    0.4602993    0.0000494  EM
+             21 -0.93101029D+04    0.4457339    0.0000479  EM
+             22 -0.93096518D+04    0.4511258    0.0000485  EM
+             23 -0.93091792D+04    0.4725948    0.0000508  EM
+             24 -0.93086720D+04    0.5072479    0.0000545  EM
+             25 -0.93081194D+04    0.5526039    0.0000594  EM
+             26 -0.93075134D+04    0.6060062    0.0000651  EM
+             27 -0.93068491D+04    0.6642454    0.0000714  EM
+             28 -0.93061262D+04    0.7229454    0.0000777  EM
+             29 -0.93053499D+04    0.7762480    0.0000834  EM
+             30 -0.93045326D+04    0.8172919    0.0000878  EM
+             31 -0.93036942D+04    0.8383960    0.0000901  EM
+             32 -0.93028609D+04    0.8333005    0.0000896  EM
+             33 -0.93020624D+04    0.7985336    0.0000858  EM
+             34 -0.93013272D+04    0.7351830    0.0000790  EM
+             35 -0.93006779D+04    0.6493597    0.0000698  EM
+             36 -0.93001273D+04    0.5505932    0.0000592  EM
+             37 -0.92992344D+04    0.8928987    0.0000960  FS
+             38 -0.92986441D+04    0.5902455    0.0000635  FS
+             39 -0.92981110D+04    0.5331461    0.0000573  EM
+             40 -0.92980435D+04    0.0675040    0.0000073  EM
+             41 -0.92980039D+04    0.0395491    0.0000043  EM
+             42 -0.92979791D+04    0.0248017    0.0000027  EM
+             43 -0.92979631D+04    0.0160186    0.0000017  EM
+             44 -0.92979525D+04    0.0106248    0.0000011  EM
+             45 -0.92979452D+04    0.0072522    0.0000008  EM
+             46 -0.92979401D+04    0.0051081    0.0000005  EM
+             47 -0.92979364D+04    0.0037127    0.0000004  EM
+             48 -0.92979336D+04    0.0027818    0.0000003  EM
+             49 -0.92979315D+04    0.0021427    0.0000002  EM
+             50 -0.92979298D+04    0.0016896    0.0000002  EM
+             51 -0.92979284D+04    0.0013628    0.0000001  EM
+             52 -0.92979273D+04    0.0011173    0.0000001  EM
+             53 -0.92979264D+04    0.0009281    0.0000001  EM
+
+
+  TECHNICAL 8 OUTPUT FOR STARTING VALUE SET 7
+
+
+
+
+   E STEP  ITER  LOGLIKELIHOOD    ABS CHANGE   REL CHANGE  ALGORITHM
+              1 -0.18802621D+05    0.0000000    0.0000000  EM
+              2 -0.95277685D+04 9274.8524313    0.4932744  EM
+              3 -0.93924620D+04  135.3065284    0.0142013  EM
+              4 -0.93530312D+04   39.4307868    0.0041981  EM
+              5 -0.93395845D+04   13.4466439    0.0014377  EM
+              6 -0.93330612D+04    6.5233328    0.0006985  EM
+              7 -0.93293962D+04    3.6649540    0.0003927  EM
+              8 -0.93271486D+04    2.2476039    0.0002409  EM
+              9 -0.93256678D+04    1.4808625    0.0001588  EM
+             10 -0.93246148D+04    1.0529954    0.0001129  EM
+             11 -0.93237997D+04    0.8150832    0.0000874  EM
+             12 -0.93231098D+04    0.6899103    0.0000740  EM
+             13 -0.93224701D+04    0.6397087    0.0000686  EM
+             14 -0.93218189D+04    0.6511340    0.0000698  EM
+             15 -0.93210913D+04    0.7276587    0.0000781  EM
+             16 -0.93202063D+04    0.8849574    0.0000949  EM
+             17 -0.93190632D+04    1.1430818    0.0001226  EM
+             18 -0.93175572D+04    1.5060896    0.0001616  EM
+             19 -0.93156337D+04    1.9234272    0.0002064  EM
+             20 -0.93133762D+04    2.2575317    0.0002423  EM
+             21 -0.93110424D+04    2.3338189    0.0002506  EM
+             22 -0.93089422D+04    2.1002195    0.0002256  EM
+             23 -0.93072479D+04    1.6942357    0.0001820  EM
+             24 -0.93059513D+04    1.2965934    0.0001393  EM
+             25 -0.93049565D+04    0.9948253    0.0001069  EM
+             26 -0.93041655D+04    0.7909935    0.0000850  EM
+             27 -0.93035086D+04    0.6569464    0.0000706  EM
+             28 -0.93029430D+04    0.5655300    0.0000608  EM
+             29 -0.93024443D+04    0.4987393    0.0000536  EM
+             30 -0.93019984D+04    0.4459295    0.0000479  EM
+             31 -0.93015967D+04    0.4016306    0.0000432  EM
+             32 -0.93012338D+04    0.3629621    0.0000390  EM
+             33 -0.93009053D+04    0.3284530    0.0000353  EM
+             34 -0.93006080D+04    0.2972902    0.0000320  EM
+             35 -0.93003390D+04    0.2690238    0.0000289  EM
+             36 -0.93000957D+04    0.2432785    0.0000262  EM
+             37 -0.92998759D+04    0.2198586    0.0000236  EM
+             38 -0.92988146D+04    1.0612897    0.0001141  FS
+             39 -0.92982041D+04    0.6104858    0.0000657  FS
+             40 -0.92981879D+04    0.0161694    0.0000017  FS
+             41 -0.92981240D+04    0.0638899    0.0000069  FS
+             42 -0.92979643D+04    0.1596961    0.0000172  EM
+             43 -0.92979413D+04    0.0230286    0.0000025  EM
+             44 -0.92979329D+04    0.0084428    0.0000009  EM
+             45 -0.92979292D+04    0.0036225    0.0000004  EM
+             46 -0.92979274D+04    0.0018536    0.0000002  EM
+             47 -0.92979263D+04    0.0011316    0.0000001  EM
+             48 -0.92979255D+04    0.0007980    0.0000001  EM
+
+
+PLOT INFORMATION
+
+The following plots are available:
+
+  Histograms (sample values)
+  Scatterplots (sample values)
+
+SAVEDATA INFORMATION
+
+
+  Save file
+    /Users/atanas/git/PR_quant_LPA/mplus/1_optseed_m/c4_1_optseed_m_v2.dat
+
+  Order of variables
+
+    PB
+    TB
+    BHS
+    AC
+    CPROB1
+    CPROB2
+    CPROB3
+    CPROB4
+    C
+    ID
+
+  Save file format           Free
+
+  Save file record length    10000
+
+  Save missing symbol        *
+
+
+     Beginning Time:  13:06:47
+        Ending Time:  13:06:49
+       Elapsed Time:  00:00:02
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2021 Muthen & Muthen

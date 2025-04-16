@@ -1,0 +1,31 @@
+TITLE:
+    Class 7 2_ll_tests_m_v1
+DATA:
+    FILE = "/Users/atanas/git/PR_quant_LPA/mplus/2_ll_tests_m/full_2_ll_tests_m.dat";
+
+VARIABLE:
+    NAMES = ID pb tb bhs ac;
+    MISSING=.;
+    USEVARIABLES = pb tb bhs ac;
+    IDVARIABLE = ID;
+    CLASSES = c(7);
+ANALYSIS:
+    ESTIMATOR = MLR;
+    ALGORITHM = INTEGRATION;
+    TYPE = MIXTURE;
+    ! STARTS = 40 8;
+    OPTSEED = 366706;
+    ! Dual-Core with hyperthreading = 4 processors
+    PROCESSORS = 4;
+    ! K-1STARTS = 20 4; ! used with TECH11 output
+    ! LRTSTARTS = 20 4 40 8; ! used with TECH14 output
+OUTPUT:
+    ! TECH1 TECH8;
+    TECH11 TECH14;
+    STANDARDIZED; ! this saves standardised scores for plotting
+SAVEDATA:
+    FILE = /Users/atanas/git/PR_quant_LPA/mplus/2_ll_tests_m/c7_2_ll_tests_m_v1.dat;
+    SAVE = CPROB;
+    FORMAT = FREE;
+PLOT:
+    TYPE = PLOT3;

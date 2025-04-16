@@ -1,0 +1,254 @@
+Mplus VERSION 8.6 (Mac)
+MUTHEN & MUTHEN
+02/02/2022   3:35 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+  LPA missing data
+  DATA:
+  FILE = "/Users/atanas/git/PR_quant_LPA/mplus/1_optseed_m/full_1_optseed_m.dat";
+
+  VARIABLE:
+  NAMES = ID pb tb bhs ac;
+   MISSING=.;
+   USEVARIABLES = pb tb bhs ac;
+  IDVARIABLE = ID;
+  ANALYSIS:
+  ESTIMATOR = MLR;
+         ALGORITHM = INTEGRATION;
+         TYPE = BASIC;
+         ! STARTS = 160 32;
+         ! OPTSEED = 391179;
+         ! Dual-Core with hyperthreading = 4 processors
+         PROCESSORS = 4;
+         ! K-1STARTS = 20 4; ! used with TECH11 output
+         ! LRTSTARTS = 20 4 40 8; ! used with TECH14 output
+  OUTPUT:
+  TECH1 TECH8;
+         ! TECH11 TECH14;
+         STANDARDIZED; ! this saves standardised scores for plotting
+  SAVEDATA:
+  FILE = /Users/atanas/git/PR_quant_LPA/mplus/1_optseed_m/c0_optseed_m_v1.dat;
+  SAVE = CPROB;
+           FORMAT = FREE;
+  PLOT:
+  TYPE = PLOT3;
+
+
+
+*** WARNING in SAVEDATA command
+  Class probabilities can only be saved for TYPE=MIXTURE.
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  5
+   2 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+LPA missing data
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         747
+
+Number of dependent variables                                    4
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   PB          TB          BHS         AC
+
+Variables with special functions
+
+  ID variable           ID
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                 100
+  Convergence criterion                                  0.100D-05
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-02
+    Relative loglikelihood change                        0.100D-05
+    Derivative                                           0.100D-02
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-02
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-02
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            15
+  Minimum value for logit thresholds                           -15
+  Minimum expected cell size for chi-square              0.100D-01
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization algorithm                                         EMA
+Integration Specifications
+  Type                                                    STANDARD
+  Number of integration points                                  15
+  Dimensions of numerical integration                            0
+  Adaptive quadrature                                           ON
+Cholesky                                                       OFF
+
+Input data file(s)
+  /Users/atanas/git/PR_quant_LPA/mplus/1_optseed_m/full_1_optseed_m.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             9
+
+
+SUMMARY OF MISSING DATA PATTERNS
+
+
+     MISSING DATA PATTERNS FOR Y (x = not missing)
+
+           1  2  3  4  5  6  7  8  9
+ PB        x     x  x  x     x  x
+ TB        x     x  x  x
+ BHS       x     x        x     x  x
+ AC        x  x     x     x     x
+
+
+     MISSING DATA PATTERN FREQUENCIES FOR Y
+
+    Pattern   Frequency     Pattern   Frequency     Pattern   Frequency
+          1         652           4          19           7           1
+          2           1           5          10           8           3
+          3          39           6           1           9          21
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR Y
+
+
+           Covariance Coverage
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+ PB             0.969
+ TB             0.964         0.964
+ BHS            0.929         0.925         0.959
+ AC             0.902         0.898         0.878         0.905
+
+
+
+
+
+RESULTS FOR BASIC ANALYSIS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           Means
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+               25.544        39.291        12.772        17.120
+
+
+           Covariances
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+ PB            85.422
+ TB            40.339        85.782
+ BHS           21.902        21.781        22.212
+ AC            17.551        11.814        10.203        43.215
+
+
+           Correlations
+              PB            TB            BHS           AC
+              ________      ________      ________      ________
+ PB             1.000
+ TB             0.471         1.000
+ BHS            0.503         0.499         1.000
+ AC             0.289         0.194         0.329         1.000
+
+
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -9338.723
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     PB                   25.541      -0.240       6.000    1.66%      16.000     24.000     26.000
+             724.000      85.260      -0.796      42.000    2.90%      29.000     34.000
+     TB                   39.288      -0.399       9.000    0.14%      32.000     38.000     40.000
+             720.000      85.539       0.181      61.000    0.28%      42.000     47.000
+     BHS                  12.756      -0.338       0.000    0.42%       9.000     11.000     13.000
+             716.000      22.271      -0.632      20.000    6.84%      14.120     17.000
+     AC                   17.146      -0.380       0.000    0.74%      12.000     16.000     17.000
+             676.000      43.051      -0.382      28.000    5.47%      19.000     23.000
+
+
+TECHNICAL 8 OUTPUT
+
+
+PLOT INFORMATION
+
+The following plots are available:
+
+  Histograms (sample values)
+  Scatterplots (sample values)
+
+SAVEDATA INFORMATION
+
+
+  Save file
+    /Users/atanas/git/PR_quant_LPA/mplus/1_optseed_m/c0_optseed_m_v1.dat
+
+  Order of variables
+
+    PB
+    TB
+    BHS
+    AC
+    ID
+
+  Save file format           Free
+
+  Save file record length    10000
+
+  Save missing symbol        *
+
+
+     Beginning Time:  15:35:05
+        Ending Time:  15:35:05
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2021 Muthen & Muthen
